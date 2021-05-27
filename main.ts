@@ -107,42 +107,6 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile0`, function (sprite, l
     }
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (controller.right.isPressed()) {
-        animation.runImageAnimation(
-        salmon,
-        [img`
-            . . . . . . f f f f f . . . . . 
-            . . . . . . f f f f f . . . . . 
-            . . . . . . f f f e f . . . . . 
-            . . . . . . f f f e e . . . . . 
-            . . . . . . f f f e e . . . . . 
-            . . . . . . e e e e e . . . . . 
-            . . . . . . . . f f . . . c c c 
-            . . . . . . . . f f . . . c . . 
-            . . . . . . . . f f f f f e e . 
-            . . . . . . . . f f f f f e e . 
-            . . . . . . . . f f . . . . . . 
-            . . . . . . . . f f . . . . . . 
-            . . . . . . . . 8 8 . . . . . . 
-            . . . . . . . . 8 8 . . . . . . 
-            . . . . . . . . 8 8 . . . . . . 
-            . . . . . . . . 2 2 . . . . . . 
-            `],
-        500,
-        false
-        )
-        bullet = sprites.createProjectileFromSprite(img`
-            . 2 2 2 2 2 . . 
-            . 2 4 4 4 2 2 2 
-            2 4 4 4 4 4 4 2 
-            2 4 4 5 5 4 4 2 
-            2 4 4 5 5 4 4 2 
-            2 2 4 4 4 4 4 2 
-            . 2 2 4 4 4 2 2 
-            . . 2 2 2 2 . . 
-            `, salmon, 200, 0)
-        music.pewPew.play()
-    }
     if (controller.left.isPressed()) {
         animation.runImageAnimation(
         salmon,
@@ -168,15 +132,51 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         false
         )
         bullet = sprites.createProjectileFromSprite(img`
-            . 2 2 2 2 2 . . 
-            . 2 4 4 4 2 2 2 
-            2 4 4 4 4 4 4 2 
-            2 4 4 5 5 4 4 2 
-            2 4 4 5 5 4 4 2 
-            2 2 4 4 4 4 4 2 
-            . 2 2 4 4 4 2 2 
-            . . 2 2 2 2 . . 
+            . 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . . . . . . 
+            . 2 4 4 4 2 2 2 . . . . . . . . . . . . . . . . . . . . . . . . 
+            2 4 4 4 4 4 4 2 . . . . . . . . . . . . . . . . . . . . . . . . 
+            2 4 4 5 5 4 4 2 . . . . . . . . . . . . . . . . . . . . . . . . 
+            2 4 4 5 5 4 4 2 . . . . . . . . . . . . . . . . . . . . . . . . 
+            2 2 4 4 4 4 4 2 . . . . . . . . . . . . . . . . . . . . . . . . 
+            . 2 2 4 4 4 2 2 . . . . . . . . . . . . . . . . . . . . . . . . 
+            . . 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . . . . . . 
             `, salmon, -200, 0)
+        music.pewPew.play()
+    }
+    if (controller.right.isPressed()) {
+        animation.runImageAnimation(
+        salmon,
+        [img`
+            . . . . . . f f f f f . . . . . 
+            . . . . . . f f f f f . . . . . 
+            . . . . . . f f f e f . . . . . 
+            . . . . . . f f f e e . . . . . 
+            . . . . . . f f f e e . . . . . 
+            . . . . . . e e e e e . . . . . 
+            . . . . . . . . f f . . . c c c 
+            . . . . . . . . f f . . . c . . 
+            . . . . . . . . f f f f f e e . 
+            . . . . . . . . f f f f f e e . 
+            . . . . . . . . f f . . . . . . 
+            . . . . . . . . f f . . . . . . 
+            . . . . . . . . 8 8 . . . . . . 
+            . . . . . . . . 8 8 . . . . . . 
+            . . . . . . . . 8 8 . . . . . . 
+            . . . . . . . . 2 2 . . . . . . 
+            `],
+        500,
+        false
+        )
+        bullet = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 . . 
+            . . . . . . . . . . . . . . . . . . . . . . . . . 2 4 4 4 2 2 2 
+            . . . . . . . . . . . . . . . . . . . . . . . . 2 4 4 4 4 4 4 2 
+            . . . . . . . . . . . . . . . . . . . . . . . . 2 4 4 5 5 4 4 2 
+            . . . . . . . . . . . . . . . . . . . . . . . . 2 4 4 5 5 4 4 2 
+            . . . . . . . . . . . . . . . . . . . . . . . . 2 2 4 4 4 4 4 2 
+            . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 4 4 4 2 2 
+            . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 . . 
+            `, salmon, 200, 0)
         music.pewPew.play()
     }
 })
@@ -362,13 +362,13 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile3`, function (sprite, l
         888888888fbbbbbbbbbbbbbbbbbbbbbbbbbbbbfcccccccccccccccccccccccccfbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbf888888888888888888888888888888fddddddddddddddddddddddddd
         `)
     tiles.setTilemap(tilemap`level3`)
-    salmon.setPosition(50, 250)
+    salmon.setPosition(50, 200)
     gayman = sprites.create(img`
         ................5555555.........
         ...............555555555........
         ..............555555d5555.......
         ..............5d5d5dd5dd5.......
-        ..............dffffdffffd.......
+        ..............fffffdfffff.......
         ..............df11fff11fd.......
         ..............dffffdffffd.......
         ..............ddddddddddd.......
@@ -376,10 +376,10 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile3`, function (sprite, l
         ...............ddddddddd........
         ..............bbbbbbbbbbbbb.....
         .............bbbbbbbbbbbbbbbb...
-        bbbbbbb.....66666666666666666...
-        bbbbbbb....b6bbbbbbbbbbbbbbbbb..
-        bbbbbbb....b6bbbbbbbbbbbbbbbb66.
-        .....bb...bbb.666666666666666bb.
+        1111111.....66666666666666666...
+        1111111....b6bbbbbbbbbbbbbbbbb..
+        1111111....b6bbbbbbbbbbbbbbbb66.
+        .....11...bbb.666666666666666bb.
         ....ddddbb6bb.bbbbbbbbbbbbb.bbbb
         ....ddddbb6bb.6666666666666.bbbb
         ....ddddbbb6..bbbbbbbbbbbbb.6666
@@ -399,27 +399,25 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile3`, function (sprite, l
         `, SpriteKind.Enemy)
     gayman.setPosition(700, 50)
     gayman.ay = 500
-    for (let index = 0; index < 100; index++) {
-        gay = sprites.createProjectileFromSprite(img`
-            ................................................
-            ................................................
-            ................................................
-            ................................................
-            ................................................
-            2222222222222222................................
-            4444444444444444................................
-            5555555555555555................................
-            7777777777777777................................
-            8888888888888888................................
-            aaaaaaaaaaaaaaaa................................
-            ................................................
-            ................................................
-            ................................................
-            ................................................
-            ................................................
-            `, gayman, -100, 0)
-        pause(100)
-    }
+    gay = sprites.createProjectileFromSprite(img`
+        ................................................
+        ................................................
+        ................................................
+        ................................................
+        ................................................
+        2222222222222222................................
+        4444444444444444................................
+        5555555555555555................................
+        7777777777777777................................
+        8888888888888888................................
+        aaaaaaaaaaaaaaaa................................
+        ................................................
+        ................................................
+        ................................................
+        ................................................
+        ................................................
+        `, gayman, -100, 0)
+    gay.follow(salmon)
 })
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, otherSprite) {
     tyrone.destroy()
@@ -449,6 +447,9 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     100,
     true
     )
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    info.changeLifeBy(-10)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`transparency16`, function (sprite, location) {
     info.startCountdown(10)
